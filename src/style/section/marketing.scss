@@ -1,0 +1,78 @@
+.marketing {
+    &__container {
+        padding: 2.75rem 30px 10rem 30px;
+        display: flex;
+        gap: 2rem;
+        align-items: center;
+        @media screen and (max-width:800px) {
+            flex-direction: column;
+            padding-bottom: 6rem;
+            gap: 3rem;
+        }
+    }
+    &__content {
+        flex: 1 1;
+        @media screen and (max-width:799.98px) {
+            margin: 0 2rem;
+        }
+    }
+    &__textbox {
+        margin-right: 3rem;
+        position: relative;
+        &::after {
+            content: url(../../../public/decor/div.svg);
+            position: absolute;
+            top: -1rem;
+            left: -2rem;
+            z-index: 0;
+        }
+        @media screen and (max-width:1180px) {
+            margin: 0 1rem;
+        }
+        @media screen and (max-width:799.98px) {
+            margin: 0;
+        }
+    }
+    &__btns {
+        margin-top: 2rem;
+        display: flex;
+        gap: clm-rem(1, 800, 2);
+        flex-wrap: wrap;
+        @media screen and (max-width:800px) {
+            justify-content: center;
+        }
+    }
+    &__mediabox {
+        flex: 1 1;
+    }
+}
+.mediabox {
+    display: grid;
+    gap: clm-rem(1, 800, 2);
+    grid-template-areas: 
+    "A  C"
+    "A  D"
+    "B  D";
+    &__item {
+        width: 100%;
+        border-radius: 50%/25%;
+        &--1 {
+            grid-area: A;
+            box-shadow: 0px 0px 15px 1px rgba(10,92,10,1);
+        }
+        &--2 {
+            border-radius: 50% 50% 0 50%;
+            grid-area: B;
+            box-shadow: 0px 0px 10px 1px rgba(230,219,0,1);
+        }
+        &--3 {
+            border-radius: 50% 0 50% 50%;
+            grid-area: C;
+            box-shadow: 0px 0px 15px 1px rgba(232,73,0,1);
+        }
+        &--4 {
+            grid-area: D;
+            box-shadow: 0px 0px 10px 1px rgba(0,176,207,1);
+        }
+    }
+}

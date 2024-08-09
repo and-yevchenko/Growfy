@@ -1,0 +1,24 @@
+.textbox {
+    &__chapter {
+        @include mixins.textParams(toRem(11), colors.$text-default, 300, 1.5, toRem(2));
+        text-transform: uppercase;
+        text-align: center;
+        border: 1px solid colors.$btn-grey;
+        border-radius: 12px;
+        padding: 0.6rem 1.1rem;
+        display: inline-block;
+        margin-bottom: 1.2rem;
+    }
+    &__title {
+        @include mixins.textParams(clm-rem(2, 1024, 3.25), colors.$text-title, 500, 1.2, normal);
+        &:not(:last-child) {
+            margin-bottom: 1.75rem;
+        }
+    }
+    &__text {
+        @include mixins.textParams(toRem(18), colors.$text-default, 300, 1.5, normal);
+        &:not(:last-child) {
+            margin-bottom: 1rem;
+        }
+    }
+}

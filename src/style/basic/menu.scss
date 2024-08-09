@@ -1,0 +1,34 @@
+.menu {
+    &__list {
+        display: flex;
+        justify-content: flex-end;
+        gap: clm-rem(1.5, 1024, 2.5);
+        @media screen and (max-width:850px) {
+            display: none;
+        }
+    }
+    &__link {
+        @include mixins.textParams(toRem(16), colors.$text-btn, 300, 1.6, normal);
+        // display: inline-block;
+        position: relative;
+        &::before {
+            content: "";
+            display: block;
+            position: absolute;
+            height: 1px;
+            width: 100%;
+            left: 0;
+            bottom: 0;
+            background: colors.$link-hover;
+            transform: scale(0, 1);
+            transform-origin: left top;
+            transition: transform 0.3s ease-out;
+        }
+        &:hover::before, 
+        &:active::before {
+            transform: scale(1, 1);
+            transform-origin: left top;
+            // transition: transform 0.3 ease-out;
+        }
+    }
+}

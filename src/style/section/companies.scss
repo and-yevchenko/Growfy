@@ -1,0 +1,43 @@
+.companies {
+    &__title {
+        @include mixins.textParams(toRem(14), colors.$text-title, 300, 1.6, toRem(1));
+        text-transform: uppercase;
+        text-align: center;
+        &:not(:last-child) {
+            margin-bottom: 1.5rem;
+        }
+    }
+    &__list {
+        display: flex;
+        gap: clm-rem(0, 1440, 1.875);
+        align-items: center;
+        justify-content: center;
+        position: relative;
+        flex-wrap: wrap;
+        &::after {
+            position: absolute;
+            left: 0;
+            content: "";
+            width: 10%;
+            height: 100%;
+            background: linear-gradient(90deg, rgba(13,13,17,1) 50%, rgba(255,255,255,0) 100%);
+        }
+        &::before {
+            position: absolute;
+            right: 0;
+            content: "";
+            width: 10%;
+            height: 100%;
+            background: linear-gradient(270deg, rgba(13,13,17,1) 50%, rgba(255,255,255,0) 100%);
+        }
+    }
+    &__item {
+        flex: 1 1;
+        @media screen and (max-width:767px) {
+            flex: 0 1 33%;
+        }
+    }
+    &__logo {
+        width: 100%;
+    }
+}

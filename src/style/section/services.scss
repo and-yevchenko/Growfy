@@ -1,0 +1,41 @@
+@import '../basic/card.scss';
+
+.services {
+    &__container {
+        padding: 10rem 30px 12rem 30px;
+        display: flex;
+        align-items: center;
+        gap: clm-rem(2, 1440, 4);
+        @media screen and (max-width:800px) {
+            padding: 6rem 30px;
+            flex-direction: column;
+        }
+    }
+    &__content {
+        flex: 1 1;
+    }
+    &__cardbox {
+        flex: 1 1;
+        display: flex;
+        gap: clm-rem(1, 1440, 2);
+        @media screen and (max-width:550px) {
+            flex-direction: column;
+            gap: 2rem;
+        }
+        &--extra-one,
+        &--extra-two {
+            display: flex;
+            flex-direction: column;
+            gap: clm-rem(1, 1440, 2);
+            @media screen and (max-width:550px) {
+                gap: 2rem;
+            }
+        }
+        &--extra-one {
+            padding-top: 2.5rem;
+        }
+    }
+    &__button {
+        margin-top: 2rem;
+    }
+}

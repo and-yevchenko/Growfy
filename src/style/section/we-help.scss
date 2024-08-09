@@ -1,0 +1,56 @@
+.we-help {
+    &__container {
+        padding: 0 30px clm-rem(8, 1024, 12) 30px;
+        display: flex;
+        gap: clm-rem(2, 1440, 4);
+        align-items: center;
+        @media screen and (max-width:800px) {
+            flex-direction: column;
+        }
+    }
+    &__media {
+        display: flex;
+        align-items: end;
+        position: relative;
+        flex: 1;
+        @media screen and (max-width:800px) {
+            order: 2;
+        }
+        &::after {
+            content: url(../../../public/decor/div.svg);
+            position: absolute;
+            left: -1rem;
+            bottom: 0;
+            z-index: 0;
+        }
+    }
+    &__content {
+        flex: 1;
+        @media screen and (max-width:800px) {
+            order: 1;
+        }
+    }
+    &__large-img {
+        width: 70%;
+        border-radius: 100% 0% 50% 50% / 45% 0% 25% 25%;
+        box-shadow: 0px 0px 15px 1px rgba(10,92,10,1);
+    }
+    &__small-img {
+        width: 30%;
+        border-radius: 50% 50% 50% 0;
+        box-shadow: 0px 0px 15px 1px rgba(232,73,0,1);
+    }
+    &__list {
+        margin-top: 2rem;
+    }
+    &__list-item {
+        @include mixins.textParams(toRem(16), colors.$text-default, 300, 2, normal);
+        background-image: url(../../../public/icon/marker.svg);
+        background-repeat: no-repeat;
+        padding-left: 2.5rem;
+        &:not(:last-child) {
+            margin-bottom: 1rem;
+        }
+    }
+
+}

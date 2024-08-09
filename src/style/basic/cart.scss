@@ -1,0 +1,17 @@
+.cart {
+    display: flex;
+    gap: 0.5rem;
+    @media screen and (max-width:500px) {
+        display: none;
+    }
+    &__name {
+        @include mixins.textParams(toRem(17.6), colors.$text-default, 300, 1.6, toRem(1));
+    }
+    &__value {
+        @include mixins.textParams(toRem(14), colors.$text-btn, 500, 1.5, normal);
+        background: rgba(129, 129, 139, 0.3);
+        padding: 0.3rem 0.675rem;
+        border-radius: 50%;
+        text-align: center;
+    }
+}

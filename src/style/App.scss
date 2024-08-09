@@ -1,0 +1,38 @@
+@use './basic/colors.scss';
+@use './basic/mixins.scss';
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500&display=swap');
+@import './functions/func.scss';
+//basic
+@import './basic/buttons.scss';
+@import './basic/textbox.scss';
+
+$maxWidthContainer: 1280px;
+
+#app {
+  font-family: 'Poppins', sans-serif;
+  color: colors.$text-default;
+  background-color: colors.$background-default;
+  min-width: 100%;
+  min-height: 100%;
+  margin: 0 auto;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  position: relative;
+}
+[class*='__container'] {
+  max-width: $maxWidthContainer + 60;
+  margin: 0 auto;
+  padding: 0 30px;
+}
+.main {
+  flex: 1 1 auto;
+}
+
+// section
+@import './layout/header.scss';
+@import './section/marketing.scss';
+@import './section/companies.scss';
+@import './section/services.scss';
+@import './section/we-help.scss';
+@import './section/statistic.scss';
