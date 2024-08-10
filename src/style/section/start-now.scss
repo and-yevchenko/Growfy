@@ -1,0 +1,48 @@
+.start-now {
+    &__content {
+        display: flex;
+        align-items: center;
+        width: 100%;
+        background-color: colors.$background-grey;
+        padding: clm-rem(2.5, 1440, 3.25) clm-rem(3.5, 1440, 6.25);
+        justify-content: space-between;
+        gap: 1.5rem;
+        border-radius: 30px;
+        @media screen and (max-width:880px) {
+            flex-wrap: wrap;
+            justify-content: center;
+        }
+        @media screen and (max-width:550px) {
+            padding: 2rem;
+        }
+    }
+    &__textbox {
+        max-width: 50%;
+        @media screen and (max-width:880px) {
+            max-width: none;
+        }
+    }
+    &__title {
+        @include mixins.textParams(clm-rem(1.5, 1024, 2), colors.$text-title, 400, 45/32, normal);
+        text-align: center;
+        &:not(:last-child) {
+            margin-bottom: 1rem;
+        }
+    }
+    &__text {
+        @include mixins.textParams(clm-rem(0.875, 1024, 1), colors.$text-default, 300, 24/16, normal);
+        text-align: center;
+        &:not(:last-child) {
+            margin-bottom: 1rem;
+        }
+    }
+    &__buttonbox {
+        display: flex;
+        gap: clm-rem(1, 1440, 2);
+        justify-content: center;
+        flex-wrap: wrap;
+        @media screen and (max-width:880px) {
+            margin-top: 2rem;
+        }
+    }
+}

@@ -65,5 +65,8 @@
     }
     &__next {
         @include mixins.textParams(toRem(14), colors.$btn-blue, 300, 1.6, normal);
+        &:hover, &:active {
+            text-decoration: underline;
+        }
     }
 }
