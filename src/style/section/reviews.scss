@@ -1,0 +1,72 @@
+.reviews {
+    &__container {
+        padding: clm-rem(8, 767, 12) 30px 0 30px;
+    }
+    &__textblock {
+        position: relative;
+        margin-bottom: 4rem;
+        padding-right: 30%;
+        @media screen and (max-width:767px) {
+            padding: 0;
+        }
+    }
+    &__button {
+        position: absolute;
+        right: 0;
+        bottom: 0;
+        @media screen and (max-width:767px) {
+            position: static;
+            margin-top: 2rem;
+        }
+    }
+    &__content {
+        display: flex;
+        flex-direction: row;
+        flex-wrap: wrap;
+        gap: 2rem;
+    }
+    &__card-review {
+        flex: 1 1;
+        width: 100%;
+    }
+}
+.card-review {
+    background-color: colors.$background-grey;
+    border-radius: 30px;
+    padding: clm-rem(2, 1440, 3) clm-rem(1.5, 1440, 2.5);
+    &__user {
+        display: flex;
+        &:not(:last-child) {
+            margin-bottom: clm-rem(1, 767, 2);
+        }
+    }
+    &__avatar {
+        border-radius: 50%;
+        width: 69px;
+        height: 69px;
+    }
+    &__nickname {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        padding-left: 1rem;
+    }
+    &__name {
+        @include mixins.textParams(toRem(16), colors.$text-title, 300, 1.5, normal);
+    }
+    &__company {
+        @include mixins.textParams(toRem(14), colors.$text-default, 300, 1.6, normal);
+    }
+    &__title {
+        @include mixins.textParams(clm-rem(1.5, 1280, 2), colors.$text-title, 400, 1.4, normal);
+        &:not(:last-child) {
+            margin-bottom: clm-rem(1, 767, 2);
+        }
+    }
+    &__text {
+        @include mixins.textParams(clm-rem(0.8, 1280, 1), colors.$text-default, 300, 1.5, normal);
+        &:not(:last-child) {
+            margin-bottom: clm-rem(1, 767, 2);
+        }
+    }
+}
