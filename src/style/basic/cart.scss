@@ -1,11 +1,11 @@
 .cart {
     display: flex;
     gap: 0.5rem;
-    @media screen and (max-width:500px) {
-        display: none;
-    }
     &__name {
         @include mixins.textParams(toRem(17.6), colors.$text-default, 300, 1.6, toRem(1));
+        @media screen and (max-width:374px) {
+            display: none;
+        }
     }
     &__value {
         @include mixins.textParams(toRem(14), colors.$text-btn, 500, 1.5, normal);

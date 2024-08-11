@@ -1,5 +1,6 @@
 .button {
     @include mixins.textParams(toRem(14), colors.$text-btn, 500, 1.6, toRem(2));
+    cursor: pointer;
     background-color: colors.$btn-blue;
     padding: 1rem 1.5rem;
     border-radius: 3.125rem;
