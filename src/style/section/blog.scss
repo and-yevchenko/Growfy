@@ -1,0 +1,72 @@
+.blog {
+    &__container {
+        padding: clm-rem(8, 767, 12) 30px;
+    }
+    &__textblock {
+        position: relative;
+        margin-bottom: 4rem;
+        padding-right: 30%;
+        @media screen and (max-width:767px) {
+            padding: 0;
+        }
+    }
+    &__button {
+        position: absolute;
+        right: 0;
+        bottom: 0;
+        @media screen and (max-width:767px) {
+            position: static;
+            margin-top: 2rem;
+        }
+    }
+    &__content {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(18rem, 1fr));
+        gap: clm-rem(1.5, 1024, 2);
+        @media screen and (max-width:424px) {
+            grid-template-columns: repeat(auto-fit, minmax(100%, 1fr));
+        }
+    }
+}
+.column-blog {
+    background-color: colors.$background-grey;
+    border-radius: 24px;
+    &__image {
+        position: relative;
+    }
+    &__img {
+        border-radius: 24px 24px 0 0;
+        width: 100%;
+        height: 100%;
+    }
+    &__name {
+        position: absolute;
+        left: 0;
+        bottom: 0;
+        @include mixins.textParams(toRem(14), colors.$text-title, 300, 1.6, normal);
+        padding: 0.625rem;
+        background-color: hsla(240, 4%, 53%, 0.5);
+    }
+    &__contentbox {
+        padding: 1.5rem 1.5rem 2.5rem 1.5rem;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        gap: 1.25rem;
+    }
+    &__date {
+        @include mixins.textParams(toRem(16), colors.$text-default, 300, 1.5, normal);
+    }
+    &__title {
+        @include mixins.textParams(toRem(19.2), colors.$text-title, 400, 1.4, normal);
+    }
+    &__info {
+        @include mixins.textParams(toRem(16), colors.$text-default, 300, 1.5, normal);
+    }
+    &__next {
+        @include mixins.textParams(toRem(14), colors.$btn-blue, 300, 1.6, normal);
+        &:hover, &:active {
+            text-decoration: underline;
+        }
+    }
+}
