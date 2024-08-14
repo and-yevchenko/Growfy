@@ -1,115 +1,119 @@
 .footer {
-    &__container {
-        padding: clm-rem(8, 1440, 14) 30px 0 30px;
+  &__container {
+    padding: clm-rem(8, 1440, 14) 30px 0 30px;
+  }
+  &__content {
+    display: flex;
+    margin-bottom: clm-rem(5, 1024, 10);
+    gap: clm-rem(3.5, 1440, 5);
+    flex-wrap: wrap;
+    @media screen and (max-width: 680px) {
+      flex-direction: column;
     }
-    &__content {
-        display: flex;
-        margin-bottom: clm-rem(5, 1024, 10);
-        gap: clm-rem(3.5, 1440, 5);
-        flex-wrap: wrap;
-        @media screen and (max-width:680px) {
-            flex-direction: column;
-        }
+  }
+  &__date {
+    padding: 3rem 0;
+    text-align: center;
+    @include mixins.textParams(toRem(14), colors.$text-default, 300, 1.6, normal);
+    border-top: 1px solid colors.$background-grey;
+  }
+  &__growfy,
+  &__pages,
+  &__subscribe {
+    flex: 1;
+    @media screen and (max-width: 680px) {
+      width: 100%;
     }
-    &__date {
-        padding: 3rem 0;
-        text-align: center;
-        @include mixins.textParams(toRem(14), colors.$text-default, 300, 1.6, normal);
-        border-top: 1px solid colors.$background-grey;
-    }
-    &__growfy, &__pages, &__subscribe {
-        flex: 1;
-        @media screen and (max-width:680px) {
-            width: 100%;
-        }
-    }
+  }
 }
 .growfy-footer {
-    &__logo {
-        display: inline-block;
-        &:not(:last-child) {
-            margin-bottom: 2rem;
-        }
+  &__logo {
+    display: inline-block;
+    &:not(:last-child) {
+      margin-bottom: 2rem;
     }
-    &__text {
-        @include mixins.textParams(clm-rem(0.8, 767, 1), colors.$text-default, 300, 1.5, normal);
-        &:not(:last-child) {
-            margin-bottom: 2rem;
-        }
+  }
+  &__text {
+    @include mixins.textParams(clm-rem(0.8, 767, 1), colors.$text-default, 300, 1.5, normal);
+    &:not(:last-child) {
+      margin-bottom: 2rem;
     }
-    &__linkbox {
-        display: flex;
-        gap: 1rem;
+  }
+  &__linkbox {
+    display: flex;
+    gap: 1rem;
+  }
+  &__link {
+    transition: transform 0.2s ease;
+    &:hover {
+      transform: translateY(5px);
+      transition: transform 0.2s ease;
     }
-    &__link {
-        transition: transform 0.2s ease;
-        &:hover {
-            transform: translateY(5px);
-            transition: transform 0.2s ease;
-        }
-    }
+  }
 }
 .pages-footer {
-    display: flex;
-    justify-content: center;
-    gap: 3.5rem;
-    &__title {
-        @include mixins.textParams(clm-rem(1, 767, 1.25), colors.$text-title, 500, 1.2, toRem(1));
-        &:not(:last-child) {
-            margin-bottom: 2rem;
-        }
+  display: flex;
+  justify-content: center;
+  gap: 3.5rem;
+  &__title {
+    @include mixins.textParams(clm-rem(1, 767, 1.25), colors.$text-title, 500, 1.2, toRem(1));
+    &:not(:last-child) {
+      margin-bottom: 2rem;
     }
-    &__list-item {
-        &:not(:last-child) {
-            margin-bottom: 1.5rem;
-        }
+  }
+  &__list-item {
+    &:not(:last-child) {
+      margin-bottom: 1.5rem;
     }
-    &__list-link {
-        @include mixins.textParams(clm-rem(0.8, 767, 1), colors.$text-default, 300, 1.6, normal);
-        &:hover, &:active {
-            text-decoration: underline;
-        }
+  }
+  &__list-link {
+    @include mixins.textParams(clm-rem(0.8, 767, 1), colors.$text-default, 300, 1.6, normal);
+    &:hover,
+    &:active {
+      text-decoration: underline;
     }
+  }
 }
 .subscribe-footer {
-    @media screen and (max-width:1017px) {
-        text-align: center;
+  @media screen and (max-width: 1017px) {
+    text-align: center;
+  }
+  &__title {
+    @include mixins.textParams(clm-rem(1, 767, 1.25), colors.$text-title, 500, 1.2, toRem(1));
+    &:not(:last-child) {
+      margin-bottom: 2rem;
     }
-    &__title {
-        @include mixins.textParams(clm-rem(1, 767, 1.25), colors.$text-title, 500, 1.2, toRem(1));
-        &:not(:last-child) {
-            margin-bottom: 2rem;
-        }
+  }
+  &__text {
+    @include mixins.textParams(clm-rem(0.8, 767, 1), colors.$text-default, 300, 1.6, normal);
+    &:not(:last-child) {
+      margin-bottom: 2rem;
     }
-    &__text {
-        @include mixins.textParams(clm-rem(0.8, 767, 1), colors.$text-default, 300, 1.6, normal);
-        &:not(:last-child) {
-            margin-bottom: 2rem;
-        }
+  }
+  &__form {
+    display: flex;
+    justify-content: center;
+    @media screen and (max-width: 424px) {
+      flex-direction: column;
     }
-    &__form {
-        display: flex;
-        justify-content: center;
-        @media screen and (max-width:424px) {
-            flex-direction: column;
-        }
+  }
+  &__email {
+    max-width: 14rem;
+    @include mixins.textParams(toRem(16), colors.$text-default, 400, 1.5, normal);
+    background-color: transparent;
+    border: 1px solid colors.$background-grey;
+    padding: 1rem 1.875rem;
+    border-radius: 3.125rem;
+    margin-right: 1rem;
+    transition: box-shadow 0.3s ease;
+    &:active,
+    &:focus {
+      box-shadow: 0px 0px 10px 1px rgba(129, 129, 139, 1);
+      transition: box-shadow 0.3s ease;
     }
-    &__email {
-        max-width: 14rem;
-        @include mixins.textParams(toRem(16), colors.$text-default, 400, 1.5, normal);
-        background-color: transparent;
-        border: 1px solid colors.$background-grey;
-        padding: 1rem 1.875rem;
-        border-radius: 3.125rem;
-        margin-right: 1rem;
-        transition: box-shadow 0.3s ease;
-        &:active, &:focus {
-            box-shadow: 0px 0px 10px 1px rgba(129,129,139,1);
-            transition: box-shadow 0.3s ease;
-        }
-        @media screen and (max-width:424px) {
-            max-width: 100%;
-            margin: 0 0 1rem 0;
-        }
+    @media screen and (max-width: 424px) {
+      max-width: 100%;
+      margin: 0 0 1rem 0;
     }
+  }
 }

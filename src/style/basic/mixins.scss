@@ -1,8 +1,9 @@
 //*** TEXT STYLE
-@mixin textParams($fz, $col, $fw, $lh, $ls) { //text styling
-    font-size: $fz;
-    color: $col;
-    font-weight: $fw;
-    line-height: $lh;
-    letter-spacing: $ls;
-  }
+@mixin textParams($fz, $col, $fw, $lh, $ls) {
+  //text styling
+  font-size: $fz;
+  color: $col;
+  font-weight: $fw;
+  line-height: $lh;
+  letter-spacing: $ls;
+}

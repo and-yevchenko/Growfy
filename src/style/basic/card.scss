@@ -1,29 +1,29 @@
 .card {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    border-radius: 30px;
-    background-color: colors.$background-grey;
-    padding: clm-rem(1.7, 1440, 3) clm-rem(0.8, 1440, 1.56);
-    min-width: auto;
-    min-height: auto;
-    &__icon {
-        width: fit-content;
-        margin-bottom: clm-rem(0.5, 1024, 1);
-        padding: 0;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  border-radius: 30px;
+  background-color: colors.$background-grey;
+  padding: clm-rem(1.7, 1440, 3) clm-rem(0.8, 1440, 1.56);
+  min-width: auto;
+  min-height: auto;
+  &__icon {
+    width: fit-content;
+    margin-bottom: clm-rem(0.5, 1024, 1);
+    padding: 0;
+  }
+  &__title {
+    @include mixins.textParams(clm-rem(0.9, 1440, 1.2), colors.$text-title, 400, 1.4, normal);
+    padding: 0;
+    &:not(:last-child) {
+      margin-bottom: 0.625rem;
     }
-    &__title {
-        @include mixins.textParams(clm-rem(0.9, 1440, 1.2), colors.$text-title, 400, 1.4, normal);
-        padding: 0;
-        &:not(:last-child) {
-            margin-bottom: 0.625rem;
-        }
+  }
+  &__text {
+    @include mixins.textParams(clm-rem(0.75, 1440, 1), colors.$text-default, 300, 1.5, normal);
+    padding: 0;
+    &:not(:last-child) {
+      margin-bottom: 0.625rem;
     }
-    &__text {
-        @include mixins.textParams(clm-rem(0.75, 1440, 1), colors.$text-default, 300, 1.5, normal);
-        padding: 0;
-        &:not(:last-child) {
-            margin-bottom: 0.625rem;
-        }
-    }
+  }
 }

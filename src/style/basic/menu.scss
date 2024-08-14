@@ -1,106 +1,106 @@
 body._lock {
-    overflow: hidden;
-  }
+  overflow: hidden;
+}
 
 .menu {
+  @media screen and (max-width: 850px) {
+    width: 100%;
+    height: 100vh;
+    position: absolute;
+    top: 0;
+    left: -100%;
+    background-color: colors.$background-default;
+    z-index: 1;
+    transition: all 0.2s;
+    display: flex;
+    overflow: auto;
+  }
+  &._active {
+    left: 0;
+    transition: all 0.2s;
+  }
+  &__list {
+    display: flex;
+    justify-content: flex-end;
+    gap: clm-rem(1.5, 1024, 2.5);
     @media screen and (max-width: 850px) {
-        width: 100%;
-        height: 100vh;
-        position: absolute;
-        top: 0;
-        left: -100%;
-        background-color: colors.$background-default;
-        z-index: 1;
-        transition: all 0.2s;
-        display: flex;
-        overflow: auto;
+      flex-direction: column;
+      align-items: center;
+      gap: 0;
+      margin: auto;
+      padding: toRem(60) toRem(30);
     }
-    &._active {
-        left: 0;
-        transition: all 0.2s;
+  }
+  &__link {
+    @include mixins.textParams(toRem(16), colors.$text-btn, 300, 1.6, normal);
+    position: relative;
+    &::before {
+      content: '';
+      display: block;
+      position: absolute;
+      height: 1px;
+      width: 100%;
+      left: 0;
+      bottom: 0;
+      background: colors.$link-hover;
+      transform: scale(0, 1);
+      transform-origin: left top;
+      transition: transform 0.3s ease-out;
     }
-    &__list {
-        display: flex;
-        justify-content: flex-end;
-        gap: clm-rem(1.5, 1024, 2.5);
-        @media screen and (max-width: 850px) {
-            flex-direction: column;
-            align-items: center;
-            gap: 0;
-            margin: auto;
-            padding: toRem(60) toRem(30);
-          }
+    &:hover::before,
+    &:active::before {
+      transform: scale(1, 1);
+      transform-origin: left top;
     }
-    &__link {
-        @include mixins.textParams(toRem(16), colors.$text-btn, 300, 1.6, normal);
-        position: relative;
-        &::before {
-            content: "";
-            display: block;
-            position: absolute;
-            height: 1px;
-            width: 100%;
-            left: 0;
-            bottom: 0;
-            background: colors.$link-hover;
-            transform: scale(0, 1);
-            transform-origin: left top;
-            transition: transform 0.3s ease-out;
-        }
-        &:hover::before, 
-        &:active::before {
-            transform: scale(1, 1);
-            transform-origin: left top;
-        }
-        @media screen and (max-width: 850px) {
-            font-size: 1.5rem;
-            color: colors.$text-btn;
-            line-height: 70px;
-          }
+    @media screen and (max-width: 850px) {
+      font-size: 1.5rem;
+      color: colors.$text-btn;
+      line-height: 70px;
     }
+  }
 }
 .menu-btn-l__icon {
-    display: none;
-    cursor: pointer;
-    z-index: 5;
-    position: absolute;
-    right: 2rem;
-    top: 2.5rem;
-    @media screen and (max-width: 850px) {
-      display: block;
-    }
-    @media screen and (max-width:530px) {
-        top: 2rem;
-    }
-  }
-  .menu-btn-l__close {
+  display: none;
+  cursor: pointer;
+  z-index: 5;
+  position: absolute;
+  right: 2rem;
+  top: 2.5rem;
+  @media screen and (max-width: 850px) {
     display: block;
-    position: absolute;
-    opacity: 0;
-    visibility: hidden;
-    font-size: 2rem;
-    color: colors.$text-btn;
-    transition: opacity 0.5s ease;
-    z-index: 2;
   }
-  .menu-btn-l__open {
-    display: block;
-    position: relative;
-    opacity: 1;
-    visibility: visible;
-    font-size: 2rem;
-    color: colors.$text-btn;
-    transition: opacity 0.5s ease;
+  @media screen and (max-width: 530px) {
+    top: 2rem;
   }
-  .menu-btn-l__icon._active .menu-btn-l__close {
-    position: relative;
-    opacity: 1;
-    visibility: visible;
-    transition: opacity 0.5s ease;
-  }
-  .menu-btn-l__icon._active .menu-btn-l__open {
-    position: absolute;
-    opacity: 0;
-    visibility: hidden;
-    transition: opacity 0.5s ease;
-  }
+}
+.menu-btn-l__close {
+  display: block;
+  position: absolute;
+  opacity: 0;
+  visibility: hidden;
+  font-size: 2rem;
+  color: colors.$text-btn;
+  transition: opacity 0.5s ease;
+  z-index: 2;
+}
+.menu-btn-l__open {
+  display: block;
+  position: relative;
+  opacity: 1;
+  visibility: visible;
+  font-size: 2rem;
+  color: colors.$text-btn;
+  transition: opacity 0.5s ease;
+}
+.menu-btn-l__icon._active .menu-btn-l__close {
+  position: relative;
+  opacity: 1;
+  visibility: visible;
+  transition: opacity 0.5s ease;
+}
+.menu-btn-l__icon._active .menu-btn-l__open {
+  position: absolute;
+  opacity: 0;
+  visibility: hidden;
+  transition: opacity 0.5s ease;
+}
